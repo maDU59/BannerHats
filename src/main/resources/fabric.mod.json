@@ -1,31 +1,31 @@
 {
 	"schemaVersion": 1,
-	"id": "phantom-clock",
+	"id": "wearable_banners",
 	"version": "${version}",
-	"name": "Phantom Clock",
+	"name": "Wearable banners",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"maDU59_"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/phantom-clock/icon.png",
+	"license": "MIT",
+	"icon": "assets/wearable_banners/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.madu59.phantomclock.PhantomClock"
+			"com.madu59.wearable_banners.WearableBanners"
 		],
 		"client": [
-			"com.madu59.phantomclock.PhantomClockClient"
+			"com.madu59.wearable_banners.WearableBannersClient"
 		]
 	},
 	"mixins": [
-		"phantom-clock.mixins.json",
+		"wearable_banners.mixins.json",
 		{
-			"config": "phantom-clock.client.mixins.json",
+			"config": "wearable_banners.client.mixins.json",
 			"environment": "client"
 		}
 	],

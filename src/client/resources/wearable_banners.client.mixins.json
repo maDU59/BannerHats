@@ -1,9 +1,8 @@
 {
 	"required": true,
-	"package": "com.madu59.phantomclock.mixin.client",
+	"package": "com.madu59.wearable_banners.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ExampleClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
