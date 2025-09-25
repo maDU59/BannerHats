@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.EquippableComponent;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.BannerItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundEvents;
@@ -25,6 +26,8 @@ public class WearableBanners implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+		/*
 
 		Item[] banners = new Item[] {
 			Items.WHITE_BANNER, Items.ORANGE_BANNER, Items.MAGENTA_BANNER, Items.LIGHT_BLUE_BANNER,
@@ -49,6 +52,8 @@ public class WearableBanners implements ModInitializer {
 					});
 			});
 		}
+
+		*/
 
 		LOGGER.info("Hello Fabric world!");
 	}

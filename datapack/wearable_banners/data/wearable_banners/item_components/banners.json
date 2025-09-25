@@ -1,0 +1,14 @@
+{
+"targets": "#minecraft:banners",
+"components": {
+    "minecraft:equippable":{
+        "slot":"head",
+        "equip_sound": "minecraft:item.armor.equip_generic",
+        "dispensable": false,
+        "swappable": true,
+        "damage_on_hurt": false,
+        "equip_on_interact": false,
+        "can_be_sheared": false
+        }
+    }
+}
