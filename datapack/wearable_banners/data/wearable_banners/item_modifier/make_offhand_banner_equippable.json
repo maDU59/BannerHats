@@ -1,0 +1,46 @@
+{
+  "function": "minecraft:set_components",
+  "components":{
+        "minecraft:equippable":{
+            "slot":"head",
+            "equip_sound":"item.armor.equip_leather",
+            "swappable":true,
+            "damage_on_hurt":false,
+            "equip_on_interact": true
+        }
+    },
+    "conditions":[{
+            "condition":"minecraft:entity_properties",
+            "entity":"this",
+            "predicate":{
+                "equipment":{
+                    "offhand":{
+                        "items":"#minecraft:banners"
+                    }
+                }
+            }
+        },
+        {
+            "condition":"minecraft:inverted",
+            "term":{
+                "condition":"minecraft:entity_properties",
+                "entity":"this",
+                "predicate":{
+                    "equipment":{
+                        "offhand":{
+                            "components":{
+                                "minecraft:equippable":{
+                                    "slot":"head",
+                                    "equip_sound":"item.armor.equip_leather",
+                                    "swappable":true,
+                                    "damage_on_hurt":false,
+                                    "equip_on_interact": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
