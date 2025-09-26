@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "wearable_banners",
+	"id": "banner_hats",
 	"version": "${version}",
-	"name": "Wearable banners",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Banner Hats",
+	"description": "Makes banners wearable in the helmet slot, just like pillagers!",
 	"authors": [
 		"maDU59_"
 	],
@@ -12,22 +12,14 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/wearable_banners/icon.png",
+	"icon": "assets/banner_hats/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.madu59.wearable_banners.WearableBanners"
-		],
-		"client": [
-			"com.madu59.wearable_banners.WearableBannersClient"
+			"com.madu59.banner_hats.BannerHats"
 		]
 	},
 	"mixins": [
-		"wearable_banners.mixins.json",
-		{
-			"config": "wearable_banners.client.mixins.json",
-			"environment": "client"
-		}
 	],
 	"depends": {
 		"fabricloader": ">=0.17.2",

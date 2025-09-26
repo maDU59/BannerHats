@@ -1,4 +1,4 @@
-package com.madu59.wearable_banners;
+package com.madu59.banner_hats;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
@@ -13,8 +13,8 @@ import net.minecraft.sound.SoundEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class WearableBanners implements ModInitializer {
-	public static final String MOD_ID = "wearable_banners";
+public class BannerHats implements ModInitializer {
+	public static final String MOD_ID = "banner_hats";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -26,8 +26,6 @@ public class WearableBanners implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
-		/*
 
 		Item[] banners = new Item[] {
 			Items.WHITE_BANNER, Items.ORANGE_BANNER, Items.MAGENTA_BANNER, Items.LIGHT_BLUE_BANNER,
@@ -52,8 +50,6 @@ public class WearableBanners implements ModInitializer {
 					});
 			});
 		}
-
-		*/
 
 		LOGGER.info("Hello Fabric world!");
 	}

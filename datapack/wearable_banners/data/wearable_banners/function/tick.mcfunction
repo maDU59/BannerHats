@@ -1,2 +1,0 @@
-execute as @a run item modify entity @s weapon.mainhand wearable_banners:make_mainhand_banner_equippable
-execute as @a run item modify entity @s weapon.offhand wearable_banners:make_offhand_banner_equippable
