@@ -11,14 +11,14 @@ base {
 }
 
 repositories {
-	
+
 }
 
 loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"phantom-clock" {
+		"banner_hats" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
