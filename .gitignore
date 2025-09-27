@@ -32,6 +32,9 @@ bin/
 
 run/
 
+# plugin
+server/
+
 # java
 
 hs_err_*.log

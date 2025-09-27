@@ -1,0 +1,9 @@
+name: BannerHats
+version: ${version}
+main: com.madu59.banner_hats.BannerHats
+api-version: 1.13
+prefix: banner_hats
+authors: [ "maDU59_"]
+description: A working voice chat in Minecraft
+website: https://madu59.github.io/
+folia-supported: true

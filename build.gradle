@@ -1,70 +1,49 @@
+import java.util.*
+
 plugins {
-	id 'fabric-loom' version "${loom_version}"
+	id 'java'
 	id 'maven-publish'
 }
 
-version = project.mod_version
+version = project.version
 group = project.maven_group
 
-base {
-	archivesName = project.archives_base_name
-}
-
 repositories {
-
-}
-
-loom {
-	splitEnvironmentSourceSets()
-
-	mods {
-		"banner_hats" {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
-	}
-
+    mavenCentral()
+    maven { url 'https://repo.papermc.io/repository/maven-public/' } // for Paper API
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    compileOnly "io.papermc.paper:paper-api:${minecraft_version}-R0.1-SNAPSHOT"
 }
 
 processResources {
 	inputs.property "version", project.version
 
-	filesMatching("fabric.mod.json") {
+	filesMatching("plugin.yml") {
 		expand "version": inputs.properties.version
 	}
 }
 
-tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+tasks{
+	jar {
+		archiveBaseName.set("banner_hats")
+		from(sourceSets.main.output)
+		duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+		manifest {
+			attributes["paperweight-mappings-namespace"] = "mojang"
+		}
+	}
 }
 
 java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
-	withSourcesJar()
+    sourceCompatibility = JavaLanguageVersion.of(17)
+    targetCompatibility = JavaLanguageVersion.of(17)
 
-	sourceCompatibility = JavaVersion.VERSION_21
-	targetCompatibility = JavaVersion.VERSION_21
+    disableAutoTargetJvm() // required because paper-api uses Java 21 (w/ gradle metadata)
 }
 
-jar {
-	inputs.property "archivesName", project.base.archivesName
-
-	from("LICENSE") {
-		rename { "${it}_${inputs.properties.archivesName}"}
-	}
-}
 
 // configure the maven publication
 publishing {
